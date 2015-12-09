@@ -200,6 +200,7 @@ class Registration1: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
             registerUser.birthDay = Int(strDateArr[2])!;
             registerUser.birthMonth = Int(strDateArr[1])!;
             registerUser.birthYear = Int(strDateArr[0])!;
+            
         }
     }
 }

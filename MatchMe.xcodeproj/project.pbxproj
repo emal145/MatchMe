@@ -22,6 +22,7 @@
 		6DB62F501C0F5EFB00085884 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB62F4F1C0F5EFB00085884 /* Menu.swift */; };
 		6DB62F521C0F638A00085884 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB62F511C0F638A00085884 /* BackTableVC.swift */; };
 		6DB62F541C0F893E00085884 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB62F531C0F893E00085884 /* Profile.swift */; };
+		6DB62F691C120BD500085884 /* MatchMeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DB62F671C120BD500085884 /* MatchMeModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		6DB62F4F1C0F5EFB00085884 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		6DB62F511C0F638A00085884 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 		6DB62F531C0F893E00085884 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		6DB62F681C120BD500085884 /* MatchMeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MatchMeModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				6DB62F4F1C0F5EFB00085884 /* Menu.swift */,
 				6DB62F511C0F638A00085884 /* BackTableVC.swift */,
 				6DB62F531C0F893E00085884 /* Profile.swift */,
+				6DB62F671C120BD500085884 /* MatchMeModel.xcdatamodeld */,
 			);
 			path = MatchMe;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				6DB62F521C0F638A00085884 /* BackTableVC.swift in Sources */,
 				6DB62F501C0F5EFB00085884 /* Menu.swift in Sources */,
 				6DB62EFE1C0E245A00085884 /* ViewController.swift in Sources */,
+				6DB62F691C120BD500085884 /* MatchMeModel.xcdatamodeld in Sources */,
 				6DB62EFC1C0E245A00085884 /* AppDelegate.swift in Sources */,
 				6DB62F361C0E275600085884 /* User.swift in Sources */,
 				6DB62F381C0E277600085884 /* LoggedIn.swift in Sources */,
@@ -538,6 +542,7 @@
 				6DB62F221C0E245A00085884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DB62F231C0E245A00085884 /* Build configuration list for PBXNativeTarget "MatchMeTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +551,7 @@
 				6DB62F251C0E245A00085884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DB62F261C0E245A00085884 /* Build configuration list for PBXNativeTarget "MatchMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,8 +560,22 @@
 				6DB62F281C0E245A00085884 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6DB62F671C120BD500085884 /* MatchMeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6DB62F681C120BD500085884 /* MatchMeModel.xcdatamodel */,
+			);
+			currentVersion = 6DB62F681C120BD500085884 /* MatchMeModel.xcdatamodel */;
+			path = MatchMeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6DB62EF01C0E245A00085884 /* Project object */;
 }

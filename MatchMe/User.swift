@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class User{
     
@@ -22,8 +24,24 @@ class User{
     var food:String = "";
     var hobbies:String = "";
     var height = "";
+    var imageParh = "";
+    var user = [NSManagedObject]()
     
     func setUserInfo(userinfo : [String]){
-        
+       username = userinfo[0];
+        name = userinfo[1];
+        surname = userinfo[2];
+        password = userinfo[3];
+        city = userinfo[4]
+        birthDay = Int(userinfo[5])!
+        birthMonth = Int(userinfo[6])!
+        birthYear = Int(userinfo[7])!;
+        description = userinfo[8]
+        food = userinfo[9]
+        hobbies = userinfo[10]
+        height = userinfo[11];
     }
+    
+    
+
 }

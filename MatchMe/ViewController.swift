@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
  
     @IBOutlet weak var usernametxtf: UITextField!
     
     @IBOutlet weak var passwordtxtf: UITextField!
+    
+    @IBOutlet var loginBtn: UIButton!
     
     var user : User!;
     var userInfo:[String] = [];
@@ -21,12 +24,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginBtn.layer.cornerRadius = 6
         // Do any additional setup after loading the view, typically from a nib.
 
     }
     
+
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         if(identifier == "loggedinView"){
+            
             checkLoggin()
             
             if !logginAccepted {
@@ -45,13 +51,6 @@ class ViewController: UIViewController {
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if(segue.identifier == "loggedinView"){
-            let svc = segue.destinationViewController as! LoggedIn;
-            svc.currentUser = user;
-        }
-    }
-    
     func loadData(){
         let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentationDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as [NSString]
         
@@ -62,11 +61,8 @@ class ViewController: UIViewController {
                 
                 let tempUserString = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding);
                 userInfo = tempUserString.componentsSeparatedByString("##$%")
-                user.setUserInfo(userInfo);
-        
-                
+                                
             }catch{
-                
                 
             }
         }
