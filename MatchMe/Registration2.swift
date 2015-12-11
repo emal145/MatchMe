@@ -17,6 +17,7 @@ class Registration2: UIViewController, UITextFieldDelegate, UITextViewDelegate,U
     @IBOutlet var hobbiestxtf: UITextView!
     @IBOutlet weak var saveBtn: UIButton!
     var registrationUser: User!;
+    var tools = Tools();
     
     @IBOutlet weak var scrollviewerReg2: UIScrollView!
     
@@ -54,6 +55,7 @@ class Registration2: UIViewController, UITextFieldDelegate, UITextViewDelegate,U
     func textViewDidEndEditing(textView: UITextView) {
         if(textView == foodtxtf || textView == hobbiestxtf){
             enableContinueBtnIfCompleted();
+            scrollviewerReg2.setContentOffset(CGPointMake(0,0), animated: true)
         }
     }
     
@@ -103,21 +105,11 @@ class Registration2: UIViewController, UITextFieldDelegate, UITextViewDelegate,U
         registrationUser.hobbies = hobbiestxtf.text!;
         
         //Trennzeichen der Daten für die anzulegende Datei ist: ##$%
-        var tempUserString = String();
+        var tempUserString = "";
         tempUserString =  "\(registrationUser.username)##$%\(registrationUser.name)##$%\(registrationUser.surname)##$%\(registrationUser.password)##$%\(registrationUser.city)##$%\(registrationUser.birthDay)##$%\(registrationUser.birthMonth)##$%\(registrationUser.birthYear)##$%\(registrationUser.description)##$%\(registrationUser.food)##$%\(registrationUser.hobbies)##$%\(registrationUser.height)\n";
         
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentationDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as [NSString]
+        tools.writeToFile("user", tempUserString: tempUserString)
         
-        let path = dirs[0].stringByAppendingPathExtension("user.csv");
-        
-        if (path != nil) {
-            do{
-                try tempUserString.writeToFile(path!, atomically: true, encoding: NSUTF8StringEncoding);
-            }catch{
-                
-            }
-        }
-               
     }
     
 }

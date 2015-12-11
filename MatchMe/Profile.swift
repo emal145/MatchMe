@@ -13,6 +13,7 @@ class Profile : UIViewController{
     
     @IBOutlet var Open: UIBarButtonItem!
     var user:User!;
+    var tools = Tools();
    
     @IBOutlet var usernameTxt: UITextField!
     @IBOutlet var nameTxt: UITextField!
@@ -23,6 +24,7 @@ class Profile : UIViewController{
     @IBOutlet var descriptionTxt: UITextField!
     @IBOutlet var foodTxt: UITextView!
     @IBOutlet var hobbiesTxt: UITextView!
+    
     var firstload = false;
     
    
@@ -35,7 +37,18 @@ class Profile : UIViewController{
         scrollviewer.contentSize.height = 1000
        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         if(!firstload){
-            loadData()
+            user = tools.loadData("user")
+           
+            usernameTxt.text = user.username
+            nameTxt.text = user.name
+            surname.text = user.surname
+            passwordTxt.text = user.password
+            cityTxt.text = user.city
+            heightTxt.text = user.height
+            descriptionTxt.text = user.description
+            foodTxt.text = user.food
+            hobbiesTxt.text = user.hobbies
+            
             firstload = true
         }
         
@@ -43,32 +56,5 @@ class Profile : UIViewController{
     
 
     
-    func loadData(){
-        let dirs = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentationDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as [NSString]
-        
-        let path = dirs[0].stringByAppendingPathExtension("user.csv");
-        
-        if (path != nil) {
-            do{
-                
-                let tempUserString = try String(contentsOfFile: path!, encoding: NSUTF8StringEncoding);
-                let userInfo = tempUserString.componentsSeparatedByString("##$%")
-                user = User();
-                user.setUserInfo(userInfo);
-                usernameTxt.text = user.username
-                nameTxt.text = user.name
-                surname.text = user.surname
-                passwordTxt.text = user.password
-                cityTxt.text = user.city
-                heightTxt.text = user.height
-                descriptionTxt.text = user.description
-                foodTxt.text = user.food
-                hobbiesTxt.text = user.hobbies
-                
-            }catch{
-                
-            }
-        }
-    }
     
 }

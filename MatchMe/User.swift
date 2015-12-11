@@ -26,6 +26,22 @@ class User{
     var height = "";
     var imageParh = "";
     var user = [NSManagedObject]()
+ 
+    var usernameShow:Bool = true;
+    var nameShow:Bool = false;
+    var surnameShow:Bool = false;
+    var passwordShow:Bool = false;
+    var cityShow:Bool = false;
+    var birthDayShow:Bool = false;
+    var birthMonthShow:Bool = false;
+    var birthYearShow:Bool = false;
+    var descriptionShow:Bool = false;
+    var foodShow:Bool = false;
+    var hobbiesShow:Bool = false;
+    var heightShow:Bool = false;
+    var imageParhShow:Bool = false;
+    var chatShow:Bool = false
+    var onTurn = false;
     
     func setUserInfo(userinfo : [String]){
        username = userinfo[0];
@@ -41,7 +57,4 @@ class User{
         hobbies = userinfo[10]
         height = userinfo[11];
     }
-    
-    
-
 }
